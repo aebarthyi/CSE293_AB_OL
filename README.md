@@ -1,5 +1,5 @@
 
-# W24 CSE293 -- Verilog Project to Silicon
+# W25 CSE293 -- Verilog Project to Silicon
 
 * Instructor: Ethan Sifferman
 * Requirements: CSEx22, CSEx25 (x22 can be taken concurrently)
