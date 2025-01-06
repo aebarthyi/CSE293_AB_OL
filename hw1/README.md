@@ -84,7 +84,7 @@ In this step, you should get a basic example of UART working.
 
 4. (Optional) run your SystemVerilog through [zachjs/sv2v](https://github.com/zachjs/sv2v) so that Yosys correctly interprets any SystemVerilog constructs you've used.
 
-5. Create a top-level module for your FPGA board. You need to instantiate a PLL ([`SB_PLL40_CORE`](https://github.com/YosysHQ/yosys/blob/main/techlibs/ice40/cells_sim.v#L2425)) to get the correct clock-frequency.
+5. Create a top-level module for your FPGA board. You need to instantiate a PLL ([`SB_PLL40_PAD`](https://z80.ro/post/using_pll/)) to get the correct clock-frequency. You can use the application `icepll` to generate the parameters.
 
 6. Create a Yosys TCL script that loads your Verilog files and synthesizes them for the iCE40 target ([`synth_ice40`](https://yosyshq.readthedocs.io/projects/yosys/en/latest/cmd/synth_ice40.html)). Be sure your script generates a synthesized `.json` and `.v` file with the following:
 
@@ -97,7 +97,7 @@ write_verilog -noexpr -noattr -simple-lhs path/to/synthesized/netlist.v
 
 8. **Take a screenshot of the waveform that verfies your UART modules synthesized correctly.**
 
-9. Assign the correct pins in a `.pcf` file, and run `nextpnr-ice40` to generate a bitstream. You can find the FTDI UART `rx` and `tx` pins here: <https://github.com/icebreaker-fpga/icebreaker/blob/master/hardware/v1.0e/icebreaker-sch.pdf>
+9. Assign the correct pins in a [`.pcf` file](https://github.com/YosysHQ/icestorm/blob/master/examples/icebreaker/icebreaker.pcf), set the clock frequencies in a [`.py` file](https://github.com/YosysHQ/nextpnr/blob/master/docs/constraints.md), and run `nextpnr-ice40` to generate a bitstream. You can find the FTDI UART `rx` and `tx` pins here: <https://github.com/icebreaker-fpga/icebreaker/blob/master/hardware/v1.0e/icebreaker-sch.pdf>.
 
 10. Use [openFPGALoader](https://github.com/trabucayre/openFPGALoader) to program your FPGA board.
 
