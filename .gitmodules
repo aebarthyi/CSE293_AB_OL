@@ -1,0 +1,9 @@
+[submodule "hw1/verilog-uart"]
+	path = hw1/verilog-uart
+	url = https://github.com/alexforencich/verilog-uart.git
+[submodule "hw1/basejump_stl"]
+	path = hw1/basejump_stl
+	url = https://github.com/bespoke-silicon-group/basejump_stl.git
+[submodule "hw1/cvfpu"]
+	path = hw1/cvfpu
+	url = https://github.com/openhwgroup/cvfpu.git
