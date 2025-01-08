@@ -72,6 +72,8 @@ I recommend the following file structure:
 - ...
 ```
 
+If you are feeling stuck, feel free to take a look at this provided Verilog Template project: <https://github.com/sifferman/verilog_template>. However, the more you set up on your own, the more comfortable you will become with debugging tools.
+
 ## Step 1 -- UART Echo
 
 In this step, you should get a basic example of UART working.
