@@ -1,0 +1,9 @@
+#| iCEBreaker
+
+## Board Clock: 12 MHz
+set_frequency  clk_12mhz_i             12
+set_io -nowarn clk_12mhz_i             35
+
+#> UART
+set_io --warn-no-port uart_tx_o 9
+set_io --warn-no-port uart_rx_i 6
