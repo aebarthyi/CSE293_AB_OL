@@ -3,7 +3,7 @@
 
 Due Date 1/24/2025. Groups of 1-2 allowed.
 
-In this assignment, you will implement an ALU controlled via UART. This project builds essential infrastructure for future coursework and potential projects, as FPGA-to-PC communication is a vital skill. While challenging, this assignment introduces critical concepts and practical techniques.
+In this assignment, you will implement an ALU on an FPGA, controlled via UART. This project builds essential infrastructure for future coursework and potential projects, as FPGA-to-PC communication is a vital skill. While challenging, this assignment introduces critical concepts and practical techniques.
 
 You may use third-party IPs for this project, such as:
 
@@ -40,6 +40,12 @@ Any third-party IP should be added via Git Submodules like so:
 git submodule add git@github.com:bespoke-silicon-group/basejump_stl.git third_party/basejump_stl
 git submodule add git@github.com:alexforencich/verilog-uart.git third_party/alexforencich_uart
 git submodule add git@github.com:openhwgroup/cvfpu.git third_party/fpnew
+```
+
+Note that every time you clone your repo, you will need to re-fetch your submodules with the following command:
+
+```bash
+git submodule update --init --recursive
 ```
 
 I recommend the following file structure:
@@ -178,7 +184,7 @@ You may use any rounding mode.
 
 ## Checkoff
 
-Checkoffs will be done in person during the scheduled-class time. Ensure the following:
+Checkoffs will be done in-person during the scheduled class-time. Ensure the following:
 
 * All instructions and operations are functional on the FPGA.
 * Your code is organized and adheres to the specified coding style.
