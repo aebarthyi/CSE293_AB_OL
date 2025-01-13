@@ -8,7 +8,7 @@ module top
   ,input [0:0] reset_n_async_unsafe_i
 
   ,output uart_tx_o
-  ,input  uart_tx_i);
+  ,input  uart_rx_i);
 
    wire clk_o;
    wire reset_n_sync_r;
@@ -70,8 +70,8 @@ module top
         * AXI output
         */
         .m_axis_tdata(s_axis_tdata),
-        .maxis_tvalid(s_axis_tvalid),
-        .maxis_tready(s_axis_tready),
+        .m_axis_tvalid(s_axis_tvalid),
+        .m_axis_tready(s_axis_tready),
 
         /*
         * UART interface
