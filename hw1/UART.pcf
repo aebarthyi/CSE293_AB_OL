@@ -1,5 +1,8 @@
 #| iCEBreaker
 
+# reset
+set_io -nowarn reset_n_async_unsafe_i  10
+
 ## Board Clock: 12 MHz
 set_frequency  clk_12mhz_i             12
 set_io -nowarn clk_12mhz_i             35
