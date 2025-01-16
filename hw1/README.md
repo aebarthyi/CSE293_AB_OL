@@ -139,6 +139,8 @@ Assuming your `echo` opcode is `0xec`, and you send the message `"Hi"`, this is 
 
 To help debug, you should have another thread to contantly print the data received from the COM port.
 
+**Take a screenshot of your Python script successfully connecting to the FPGA and sending packets.**
+
 **In your report, describe any difficulties faced in this section.**
 
 ## Step 3 -- Sending Operations Over UART
@@ -154,8 +156,6 @@ You should write helper functions such as `add32(operands)`, `mul32(operands)`, 
 Be aware of endianness. You may send the length and the data as either big-endian or little-endian.
 
 **In your report, denote what opcodes you picked for each instruciton.**
-
-**Take a screenshot of your Python script successfully connecting to the FPGA and sending packets.**
 
 **In your report, describe any difficulties faced in this section.**
 
