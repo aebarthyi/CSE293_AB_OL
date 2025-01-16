@@ -155,6 +155,8 @@ Be aware of endianness. You may send the length and the data as either big-endia
 
 **In your report, denote what opcodes you picked for each instruciton.**
 
+**Take a screenshot of your Python script successfully connecting to the FPGA and sending packets.**
+
 **In your report, describe any difficulties faced in this section.**
 
 ## Step 4 -- ALU RTL
@@ -169,6 +171,10 @@ You will likely need a state machine to handle each operand. Be sure to follow t
 
 Also, you must create a testbench that uses fuzzing to run tests on 1000 random inputs for each operation. Your testbench should send data to the `rx` port with a `uart_tx` module, and should receive data from the `tx` port with a `uart_rx` module. You should also model the PLL by overriding the PLL output in the testbench.
 
+**Take a screenshot of the simulation waveform that demonstrates your packets are transmitted, and replies are received.**
+
+**Take a screenshot of the your Python script properly sending packets, then recieving responses.**
+
 **In your report, describe any difficulties faced in this section.**
 
 ## Step 5 -- Floating Point Support (Extra Credit)
@@ -179,6 +185,8 @@ For extra credit, you may add the following operations:
 * Multiply together a list of 32-bit floats.
 
 You may use any rounding mode.
+
+**Include screenshot(s) of floating point working.**
 
 **In your report, describe any difficulties faced in this section.**
 
