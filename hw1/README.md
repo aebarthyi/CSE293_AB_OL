@@ -3,7 +3,7 @@
 
 Due Date 1/24/2025. Groups of 1-2 allowed.
 
-In this assignment, you will implement an ALU controlled via UART. This project builds essential infrastructure for future coursework and potential projects, as FPGA-to-PC communication is a vital skill. While challenging, this assignment introduces critical concepts and practical techniques.
+In this assignment, you will implement an ALU on an FPGA, controlled via UART. This project builds essential infrastructure for future coursework and potential projects, as FPGA-to-PC communication is a vital skill. While challenging, this assignment introduces critical concepts and practical techniques.
 
 You may use third-party IPs for this project, such as:
 
@@ -40,6 +40,12 @@ Any third-party IP should be added via Git Submodules like so:
 git submodule add git@github.com:bespoke-silicon-group/basejump_stl.git third_party/basejump_stl
 git submodule add git@github.com:alexforencich/verilog-uart.git third_party/alexforencich_uart
 git submodule add git@github.com:openhwgroup/cvfpu.git third_party/fpnew
+```
+
+Note that every time you clone your repo, you will need to re-fetch your submodules with the following command:
+
+```bash
+git submodule update --init --recursive
 ```
 
 I recommend the following file structure:
@@ -133,6 +139,8 @@ Assuming your `echo` opcode is `0xec`, and you send the message `"Hi"`, this is 
 
 To help debug, you should have another thread to contantly print the data received from the COM port.
 
+**Take a screenshot of your Python script successfully connecting to the FPGA and sending packets.**
+
 **In your report, describe any difficulties faced in this section.**
 
 ## Step 3 -- Sending Operations Over UART
@@ -163,6 +171,10 @@ You will likely need a state machine to handle each operand. Be sure to follow t
 
 Also, you must create a testbench that uses fuzzing to run tests on 1000 random inputs for each operation. Your testbench should send data to the `rx` port with a `uart_tx` module, and should receive data from the `tx` port with a `uart_rx` module. You should also model the PLL by overriding the PLL output in the testbench.
 
+**Take a screenshot of the simulation waveform that demonstrates your packets are transmitted, and replies are received.**
+
+**Take a screenshot of the your Python script properly sending packets, then recieving responses.**
+
 **In your report, describe any difficulties faced in this section.**
 
 ## Step 5 -- Floating Point Support (Extra Credit)
@@ -174,11 +186,13 @@ For extra credit, you may add the following operations:
 
 You may use any rounding mode.
 
+**Include screenshot(s) of floating point working.**
+
 **In your report, describe any difficulties faced in this section.**
 
 ## Checkoff
 
-Checkoffs will be done in person during the scheduled-class time. Ensure the following:
+Checkoffs will be done in-person during the scheduled class-time. Ensure the following:
 
 * All instructions and operations are functional on the FPGA.
 * Your code is organized and adheres to the specified coding style.

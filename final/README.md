@@ -53,7 +53,7 @@ Focus on building a complex RTL design, simply using the UART infrastructure you
 
 On Piazza, write a paragraph introducing yourself and explaining what project(s) you are interested in working on.
 
-**1/17/2025: Team Formation and Proposal Submission**
+**1/17/2025: Team Formation and [Proposal Submission](./proposal.md)**
 
 Assemble your teams and submit a one-page proposal outlining your project idea and a timeline of goals.
 

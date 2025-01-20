@@ -12,7 +12,7 @@
 
 ## Assignments
 
-* [HW1 -- UART ALU](./hw1/)
+* [HW1 -- FPGA UART ALU](./hw1/)
 * *~~HW2 -- OpenLane~~ TBD*
 * [HW3 -- Impactful Community Contribution](./hw3/)
 
