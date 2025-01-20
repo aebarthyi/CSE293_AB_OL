@@ -1,10 +1,10 @@
-REPO_ROOT ?= $(shell git rev-parse --show-toplevel)
+# REPO_ROOT ?= $(shell git rev-parse --show-toplevel)
+REPO_ROOT = $(shell pwd)
+BASEJUMP_STL_DIR=$(REPO_ROOT)/third_party/basejump_stl
+VERILOG_UART_DIR=$(REPO_ROOT)/third_party/verilog-uart
+CVFPU_DIR=$(REPO_ROOT)/third_party/cvfpu
 
-BASEJUMP_STL_DIR=$(REPO_ROOT)/hw1/basejump_stl
-VERILOG_UART_DIR=$(REPO_ROOT)/hw1/verilog-uart
-CVFPU_DIR=$(REPO_ROOT)/hw1/cvfpu
-
-PCF_PATH = $(REPO_ROOT)/hw1/UART.pcf
+PCF_PATH = $(REPO_ROOT)/synth/UART.pcf
 
 synth build/uart.asc build/uart.bin:
 	# if build folder doesn't exist, create it
@@ -17,4 +17,11 @@ synth build/uart.asc build/uart.bin:
 	icepack build/uart.asc build/uart.bin
 
 lint:
-	verilator --lint-only -I$(BASEJUMP_STL_DIR)/bsg_misc/ -I$(VERILOG_UART_DIR)/rtl -Wall top.sv dff.sv inv.sv pll.sv
+	verilator --lint-only -I$(BASEJUMP_STL_DIR)/bsg_misc/ -I$(VERILOG_UART_DIR)/rtl/ -I$(REPO_ROOT)/rtl/ -Wall top.sv dff.sv inv.sv pll.sv
+
+lint_uart_only:
+	verilator --lint-only -I$(VERILOG_UART_DIR)/rtl/ -I$(REPO_ROOT)/rtl/ -Wall uart_module.sv
+
+sim:
+# verilator --binary -I$(BASEJUMP_STL_DIR)/bsg_misc/ -I$(VERILOG_UART_DIR)/rtl/ -I$(REPO_ROOT)/rtl/ -I$(REPO_ROOT)/dv/ top.sv dff.sv inv.sv pll.sv tb.sv --top tb --trace-fst
+	verilator --binary -I$(BASEJUMP_STL_DIR)/bsg_misc/ -I$(VERILOG_UART_DIR)/rtl/ -I$(REPO_ROOT)/rtl/ -I$(REPO_ROOT)/dv/ uart_module.sv tb.sv --top tb --trace-fst
